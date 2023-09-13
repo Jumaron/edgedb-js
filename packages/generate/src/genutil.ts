@@ -204,6 +204,7 @@ export function toTSScalarType(
       }
     }
 
+    case "multirange":
     case "range": {
       const tn = toTSScalarType(
         types.get(type.range_element_id) as introspect.PrimitiveType,

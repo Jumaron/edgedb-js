@@ -27,6 +27,7 @@ export type TypeKind =
   | "array"
   | "tuple"
   | "range"
+  | "multirange"
   | "unknown";
 
 export type TypeProperties<T extends TypeKind> = {
@@ -68,7 +69,7 @@ export type TupleType = TypeProperties<"tuple"> & {
   is_abstract: boolean;
 };
 
-export type RangeType = TypeProperties<"range"> & {
+export type RangeType = TypeProperties<"range" | "multirange"> & {
   range_element_id: UUID;
   is_abstract: boolean;
 };
